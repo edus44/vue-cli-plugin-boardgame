@@ -14,7 +14,7 @@ const client = Client({ game, ...config })
 client.connect()
 
 if (process.env.NODE_ENV === 'development') {
-  require('./clientDebug').startDebug(client)
+  require('vue-cli-plugin-boardgame/clientDebug').startDebug(client)
   window.client = client
 }
 

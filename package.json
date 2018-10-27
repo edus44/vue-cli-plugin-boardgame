@@ -1,7 +1,7 @@
 {
   "name": "vue-cli-plugin-boardgame",
   "description": "Adds supports for Boardgame.io client, game and server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "keywords": [
     "vue",
@@ -16,5 +16,10 @@
     "url": "git+https://github.com/edus44/vue-cli-plugin-boardgame.git"
   },
   "author": "edus44 <eduhhg@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "@babel/preset-react": "^7.0.0"
+  }
 }
