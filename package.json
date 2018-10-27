@@ -1,7 +1,7 @@
 {
   "name": "vue-cli-plugin-boardgame",
   "description": "Adds supports for Boardgame.io client, game and server",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
   "keywords": [
     "vue",
