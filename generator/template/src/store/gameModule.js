@@ -3,9 +3,10 @@ import game from '@/../game/index'
 
 const config = {
   numPlayers: 2,
-  playerID: 'def',
-  gameID: 'def',
-  multiplayer: process.env.NODE_ENV === 'production' ? true : { server: 'localhost:8000' },
+  /* Multiplayer options */
+  // playerID: 'def',
+  // gameID: 'def',
+  // multiplayer: process.env.NODE_ENV === 'production' ? true : { server: 'localhost:8000' },
 }
 
 const client = Client({ game, ...config })
@@ -13,7 +14,7 @@ const client = Client({ game, ...config })
 client.connect()
 
 if (process.env.NODE_ENV === 'development') {
-  require('./clientDebug')(client)
+  require('./clientDebug').startDebug(client)
   window.client = client
 }
 
@@ -46,8 +47,6 @@ const mutations = {
 }
 
 const getters = {
-  player: state => state.G.players[state.config.playerID],
-  isActive: state => state.config.playerID === state.ctx.currentPlayer,
 }
 
 export default {
