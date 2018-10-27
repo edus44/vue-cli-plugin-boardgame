@@ -1,8 +1,8 @@
 module.exports = api => {
   api.extendPackage({
-    scripts:{
-      "start": "node --experimental-modules server",
-      "start:dev": "nodemon -w game -w server --exec yarn start "
+    scripts: {
+      start: 'node --experimental-modules server',
+      'start:dev': 'nodemon -w game -w server --exec yarn start ',
     },
     dependencies: {
       'boardgame.io': '^0.26.3',
@@ -11,9 +11,13 @@ module.exports = api => {
     },
     devDependencies: {
       '@babel/preset-react': '^7.0.0',
+      nodemon: '^1.18.5',
     },
     engines: {
       node: '>=8',
     },
   })
+
+  api.render('./template')
+
 }
