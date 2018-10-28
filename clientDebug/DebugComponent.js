@@ -50,7 +50,17 @@ export default function Client({ client }) {
       this.playerID = this.client.playerID || null
       this.credentials = this.client.credentials || null
 
-      this.client.subscribe(() => this.forceUpdate())
+      // Subscribe and patch original subscribe because
+      // subscribe only allow one callback
+      let subFn
+      this.client.subscribe(state => {
+        this.forceUpdate()
+        subFn && subFn(state)
+      })
+
+      this.client.subscribe = fn => {
+        subFn = fn
+      }
     }
 
     updateGameID = gameID => {
