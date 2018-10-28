@@ -32,8 +32,12 @@ export default {
   computed: {
     ...mapState('game', ['G', 'ctx']),
   },
+  created(){
+    // Initialize boardgame client
+    this.init() 
+  },
   methods: {
-    ...mapActions('game', ['move']),
+    ...mapActions('game', ['move','init']),
     myMove(){
       this.move({ name: 'myMove', args: [arg1,arg2] })
     }

@@ -25,4 +25,7 @@ module.exports = api => {
       vuex: '^3.0.1'
     }
   })
+  
+  api.exitLog('Visit https://github.com/edus44/vue-cli-plugin-boardgame for usage info','info')
+
 }

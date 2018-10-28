@@ -1,27 +1,28 @@
 import { Client } from 'boardgame.io/client'
 import game from '@/../game/index'
 
-const config = {
-  numPlayers: 2,
-  /* Multiplayer options */
-  // playerID: 'def',
-  // gameID: 'def',
-  // multiplayer: process.env.NODE_ENV === 'production' ? true : { server: 'localhost:8000' },
-}
+let client
+function initClient(config) {
+  client = Client({ game, ...config })
 
-const client = Client({ game, ...config })
+  client.connect()
 
-client.connect()
-
-if (process.env.NODE_ENV === 'development') {
-  require('vue-cli-plugin-boardgame/clientDebug').start(client)
-  window.client = client
+  if (process.env.NODE_ENV === 'development') {
+    require('vue-cli-plugin-boardgame/clientDebug').start(client)
+    window.client = client
+  }
 }
 
 const state = {
   G: null,
   ctx: null,
-  config,
+  config: {
+    numPlayers: 3,
+    /* Multiplayer options */
+    // playerID: 'def',
+    // gameID: 'def',
+    // multiplayer: process.env.NODE_ENV === 'production' ? true : { server: 'localhost:8000' },
+  },
 }
 
 const actions = {
@@ -31,6 +32,7 @@ const actions = {
       commit('SET_STATE', { G, ctx })
     }
 
+    initClient(state.config)
     client.subscribe(sync)
     sync()
   },
@@ -46,8 +48,7 @@ const mutations = {
   },
 }
 
-const getters = {
-}
+const getters = {}
 
 export default {
   namespaced: true,
