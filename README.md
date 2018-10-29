@@ -23,7 +23,7 @@ Game logic and server needs to be written using ESM modules for better browser-n
 ```sh
 vue add boardgame
 
-\\ or
+# or
 
 yarn add --dev vue-cli-plugin-boardgame
 vue invoke boardgame
