@@ -20,6 +20,8 @@ Game logic and server needs to be written using ESM modules for better browser-n
   * Node >= 8 is required.
   * Node process uses `--experimental-modules` flag
 
+
+### Install
 ```sh
 vue add boardgame
 
