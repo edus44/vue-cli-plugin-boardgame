@@ -21,7 +21,12 @@ Game logic and server needs to be written using ESM modules for better browser-n
   * Node process uses `--experimental-modules` flag
 
 ```sh
+vue add boardgame
+
+\\ or
+
 yarn add --dev vue-cli-plugin-boardgame
+vue invoke boardgame
 ```
 
 #### Example of Boardgame client usage
