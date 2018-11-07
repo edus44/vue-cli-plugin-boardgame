@@ -21,7 +21,7 @@ const state = {
     /* Multiplayer options */
     // playerID: 'def',
     // gameID: 'def',
-    // multiplayer: process.env.NODE_ENV === 'production' ? true : { server: 'localhost:8000' },
+    // multiplayer: { server: process.env.NODE_ENV === 'production' ? '' : 'localhost:8000' },
   },
 }
 
